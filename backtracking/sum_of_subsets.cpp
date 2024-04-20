@@ -1,14 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Print all subsets if there is atleast one subset of set[]
-// with sum equal to given sum
+// Print all subsets if there is atleast one subset of set[] with sum equal to given sum
 bool flag = 0;
 void PrintSubsetSum(int i, int n, int set[], int targetSum,
 					vector<int>& subset)
 {
-	// targetSum is zero then there exist a
-	// subset.
+	// targetSum is zero then there exist a subset.
 	if (targetSum == 0) {
 
 		// Prints valid subset
@@ -29,8 +27,7 @@ void PrintSubsetSum(int i, int n, int set[], int targetSum,
 	// Not considering current element
 	PrintSubsetSum(i + 1, n, set, targetSum, subset);
 
-	// consider current element if it is less than or equal
-	// to targetSum
+	// consider current element if it is less than or equal to targetSum
 	if (set[i] <= targetSum) {
 
 		// push the current element in subset
@@ -40,13 +37,11 @@ void PrintSubsetSum(int i, int n, int set[], int targetSum,
 		PrintSubsetSum(i + 1, n, set, targetSum - set[i],
 					subset);
 
-		// pop-back element after recursive call to restore
-		// subsets original configuration
+		// pop-back element after recursive call to restore subsets original configuration
 		subset.pop_back();
 	}
 }
 
-// Driver code
 int main()
 {
 	// Test case 1
@@ -71,4 +66,3 @@ int main()
 
 	return 0;
 }
-// This code is contributed by Hem Kishan

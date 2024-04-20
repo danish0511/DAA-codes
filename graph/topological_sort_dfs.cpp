@@ -2,8 +2,7 @@
 using namespace std;
 class Solution {
 
-	// Topo sort only exists in DAGs i.e.
-	// Direct Acyclic graph
+	// Topo sort only exists in DAGs i.e. Direct Acyclic graph
 	void dfs(vector<int> adj[], vector<int>& vis, int node,
 			int n, stack<int>& stck)
 	{
@@ -17,8 +16,7 @@ class Solution {
 	}
 
 public:
-	// During the traversal u must
-	// be visited before v
+	// During the traversal u must be visited before v
 	stack<int> topo_sort(vector<int> adj[], int n)
 	{
 		vector<int> vis(n, 0);
@@ -39,7 +37,6 @@ void addEdge(vector<int> adj[], int u, int v)
 	adj[u].push_back(v);
 }
 
-// Drivers code
 int main()
 {
 	int n = 6;

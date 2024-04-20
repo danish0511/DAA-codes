@@ -1,12 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// A utility function to get sum of 
-// array elements freq[i] to freq[j] 
+// A utility function to get sum of array elements freq[i] to freq[j] 
 int sum(int freq[], int i, int j); 
 
-// A recursive function to calculate 
-// cost of optimal binary search tree 
+// A recursive function to calculate cost of optimal binary search tree 
 int optCost(int freq[], int i, int j) 
 { 
 	// Base cases 
@@ -21,10 +19,7 @@ int optCost(int freq[], int i, int j)
 	// Initialize minimum value 
 	int min = INT_MAX; 
 	
-	// One by one consider all elements 
-	// as root and recursively find cost 
-	// of the BST, compare the cost with
-	// min and update min if needed 
+	// One by one consider all elements as root and recursively find cost of the BST, compare the cost with min and update min if needed 
 	for (int r = i; r <= j; ++r) 
 	{ 
 		int cost = optCost(freq, i, r - 1) + 
@@ -37,22 +32,17 @@ int optCost(int freq[], int i, int j)
 	return min + fsum; 
 } 
 
-// The main function that calculates 
-// minimum cost of a Binary Search Tree. 
-// It mainly uses optCost() to find 
-// the optimal cost. 
+// The main function that calculates minimum cost of a Binary Search Tree. 
+// It mainly uses optCost() to find the optimal cost. 
 int optimalSearchTree(int keys[], 
 					int freq[], int n) 
 { 
-	// Here array keys[] is assumed to be 
-	// sorted in increasing order. If keys[] 
-	// is not sorted, then add code to sort 
-	// keys, and rearrange freq[] accordingly. 
+	/* Here array keys[] is assumed to be sorted in increasing order. If keys[] is not sorted, then add code to sort keys, and 
+	rearrange freq[] accordingly. */
 	return optCost(freq, 0, n - 1); 
 } 
 
-// A utility function to get sum of 
-// array elements freq[i] to freq[j] 
+// A utility function to get sum of array elements freq[i] to freq[j] 
 int sum(int freq[], int i, int j) 
 { 
 	int s = 0; 
@@ -61,7 +51,6 @@ int sum(int freq[], int i, int j)
 	return s; 
 } 
 
-// Driver Code
 int main() 
 { 
 	int keys[] = {10, 12, 20}; 
@@ -71,6 +60,3 @@ int main()
 		<< optimalSearchTree(keys, freq, n); 
 	return 0; 
 } 
-
-// This is code is contributed
-// by rathbhupendra

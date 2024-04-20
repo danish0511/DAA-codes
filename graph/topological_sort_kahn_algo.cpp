@@ -4,13 +4,10 @@ using namespace std;
 class Solution {
 
 public:
-	// Topological sort using bfs is called
-	// Kahn's Algorithm
+	// Topological sort using bfs is called Kahn's Algorithm
 	void topo_sort(vector<int> adj[], int n)
 	{
-		// Here concept of indegree used
-		// as it represents number of incoming
-		// edges on a node
+		// Here concept of indegree used as it represents number of incoming edges on a node
 		vector<int> indegree(n, 0);
 		// Code for make indegree
 		for (int i = 0; i < n; i++) {
@@ -21,8 +18,7 @@ public:
 
 		vector<int> ans;
 		queue<int> qrr;
-		// Initially insert elements who has
-		// indegree 0
+		// Initially insert elements who has indegree 0
 		for (int i = 0; i < n; i++) {
 
 			if (indegree[i] == 0) {
@@ -31,8 +27,7 @@ public:
 		}
 
 		while (!qrr.empty()) {
-			// push those elements in queue which
-			// poses 0 indegree
+			// push those elements in queue which poses 0 indegree
 			int node = qrr.front();
 
 			qrr.pop();
@@ -56,7 +51,6 @@ void addEdge(vector<int> adj[], int u, int v)
 	adj[u].push_back(v);
 }
 
-// Driver code
 int main()
 {
 	int n = 6;

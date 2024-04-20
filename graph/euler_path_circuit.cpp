@@ -111,7 +111,6 @@ void test(Graph &g)
 		cout << "graph has a Euler cycle\n";
 }
 
-// Driver program to test above function
 int main()
 {
 	// Let us create and test graphs shown in above figures
@@ -141,16 +140,14 @@ int main()
 	g3.addEdge(1, 3);
 	test(g3);
 
-	// Let us create a graph with 3 vertices
-	// connected in the form of cycle
+	// Let us create a graph with 3 vertices connected in the form of cycle
 	Graph g4(3);
 	g4.addEdge(0, 1);
 	g4.addEdge(1, 2);
 	g4.addEdge(2, 0);
 	test(g4);
 
-	// Let us create a graph with all vertices
-	// with zero degree
+	// Let us create a graph with all vertices with zero degree
 	Graph g5(3);
 	test(g5);
 

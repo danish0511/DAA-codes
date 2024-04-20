@@ -24,7 +24,6 @@ int binarySearch(int arr[], int l, int r, int x)
     return -1;
 }
 
-// Driver code
 int main(void)
 {
     int arr[] = { 2, 3, 4, 10, 40 };

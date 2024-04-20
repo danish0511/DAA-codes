@@ -2,13 +2,11 @@
 #include <iostream>
 using namespace std;
 
-// A structure to represent a job
 struct Job {
 
 	char id; // Job Id
 	int dead; // Deadline of job
-	int profit; // Profit if job is over before or on
-				// deadline
+	int profit; // Profit if job is over before or on deadline
 };
 
 // Comparator function for sorting jobs
@@ -32,8 +30,7 @@ void printJobScheduling(Job arr[], int n)
 
 	// Iterate through all given jobs
 	for (int i = 0; i < n; i++) {
-		// Find a free slot for this job (Note that we start
-		// from the last possible slot)
+		// Find a free slot for this job (Note that we start from the last possible slot)
 		for (int j = min(n, arr[i].dead) - 1; j >= 0; j--) {
 			// Free slot found
 			if (slot[j] == false) {
@@ -50,7 +47,6 @@ void printJobScheduling(Job arr[], int n)
 			cout << arr[result[i]].id << " ";
 }
 
-// Driver's code
 int main()
 {
 	Job arr[] = { { 'a', 2, 100 },
@@ -67,5 +63,3 @@ int main()
 	printJobScheduling(arr, n);
 	return 0;
 }
-
-// This code is contributed by Aditya Kumar (adityakumar129)

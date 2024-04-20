@@ -1,12 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// A utility function that returns
-// maximum of two integers
+// A utility function that returns maximum of two integers
 int max(int a, int b) { return (a > b) ? a : b; }
 
-// Returns the maximum value that
-// can be put in a knapsack of capacity W
+// Returns the maximum value that can be put in a knapsack of capacity W
 int knapSack(int W, int wt[], int val[], int n)
 {
 
@@ -14,10 +12,7 @@ int knapSack(int W, int wt[], int val[], int n)
     if (n == 0 || W == 0)
         return 0;
 
-    // If weight of the nth item is more
-    // than Knapsack capacity W, then
-    // this item cannot be included
-    // in the optimal solution
+    // If weight of the nth item is more than Knapsack capacity W, then this item cannot be included in the optimal solution
     if (wt[n - 1] > W)
         return knapSack(W, wt, val, n - 1);
 
@@ -31,7 +26,6 @@ int knapSack(int W, int wt[], int val[], int n)
             knapSack(W, wt, val, n - 1));
 }
 
-// Driver code
 int main()
 {
     int profit[] = { 60, 100, 120 };
@@ -41,5 +35,3 @@ int main()
     cout << knapSack(W, weight, profit, n);
     return 0;
 }
-
-// This code is contributed by rathbhupendra

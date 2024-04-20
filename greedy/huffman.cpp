@@ -23,8 +23,7 @@ struct MinHeapNode {
 	} 
 }; 
 
-// For comparison of 
-// two heap nodes (needed in min heap) 
+// For comparison of two heap nodes (needed in min heap) 
 struct compare { 
 
 	bool operator()(MinHeapNode* l, MinHeapNode* r) 
@@ -34,8 +33,7 @@ struct compare {
 	} 
 }; 
 
-// Prints huffman codes from 
-// the root of Huffman Tree. 
+// Prints huffman codes from the root of Huffman Tree. 
 void printCodes(struct MinHeapNode* root, string str) 
 { 
 
@@ -49,8 +47,7 @@ void printCodes(struct MinHeapNode* root, string str)
 	printCodes(root->right, str + "1"); 
 } 
 
-// The main function that builds a Huffman Tree and 
-// print codes by traversing the built Huffman Tree 
+// The main function that builds a Huffman Tree and print codes by traversing the built Huffman Tree 
 void HuffmanCodes(char data[], int freq[], int size) 
 { 
 	struct MinHeapNode *left, *right, *top; 
@@ -66,21 +63,16 @@ void HuffmanCodes(char data[], int freq[], int size)
 	// Iterate while size of heap doesn't become 1 
 	while (minHeap.size() != 1) { 
 
-		// Extract the two minimum 
-		// freq items from min heap 
+		// Extract the two minimum freq items from min heap 
 		left = minHeap.top(); 
 		minHeap.pop(); 
 
 		right = minHeap.top(); 
 		minHeap.pop(); 
 
-		// Create a new internal node with 
-		// frequency equal to the sum of the 
-		// two nodes frequencies. Make the 
-		// two extracted node as left and right children 
-		// of this new node. Add this node 
-		// to the min heap '$' is a special value 
-		// for internal nodes, not used 
+		/* Create a new internal node with frequency equal to the sum of the two nodes frequencies. Make the two 
+		extracted node as left and right children of this new node. Add this node to the min heap '$' is a special 
+		value for internal nodes, not used */
 		top = new MinHeapNode('$', 
 							left->freq + right->freq); 
 
@@ -90,8 +82,7 @@ void HuffmanCodes(char data[], int freq[], int size)
 		minHeap.push(top); 
 	} 
 
-	// Print Huffman codes using 
-	// the Huffman tree built above 
+	// Print Huffman codes using the Huffman tree built above 
 	printCodes(minHeap.top(), ""); 
 } 
 
@@ -108,5 +99,3 @@ int main()
 
 	return 0; 
 } 
-
-// This code is contributed by Aditya Goel

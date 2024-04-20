@@ -1,8 +1,7 @@
  #include <iostream> 
 using namespace std; 
 
-// Prints a maximum set of activities that can be done by a 
-// single person, one at a time. 
+// Prints a maximum set of activities that can be done by a single person, one at a time. 
 void printMaxActivities(int s[], int f[], int n) 
 { 
 	int i, j; 
@@ -15,9 +14,7 @@ void printMaxActivities(int s[], int f[], int n)
 
 	// Consider rest of the activities 
 	for (j = 1; j < n; j++) { 
-		// If this activity has start time greater than or 
-		// equal to the finish time of previously selected 
-		// activity, then select it 
+		// If this activity has start time greater than or equal to the finish time of previously selected activity, then select it 
 		if (s[j] >= f[i]) { 
 			cout << j << " "; 
 			i = j; 
@@ -25,7 +22,6 @@ void printMaxActivities(int s[], int f[], int n)
 	} 
 } 
 
-// Driver code 
 int main() 
 { 
 	int s[] = { 1, 3, 0, 5, 8, 5 }; 
@@ -35,5 +31,4 @@ int main()
 	// Function call 
 	printMaxActivities(s, f, n); 
 	return 0; 
-} 
-// this code contributed by shivanisinghss2110
+}

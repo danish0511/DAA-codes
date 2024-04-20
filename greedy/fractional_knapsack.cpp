@@ -1,8 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Structure for an item which stores weight and
-// corresponding value of Item
+// Structure for an item which stores weight and corresponding value of Item
 struct Item {
 	int profit, weight;
 
@@ -14,8 +13,7 @@ struct Item {
 	}
 };
 
-// Comparison function to sort Item 
-// according to profit/weight ratio
+// Comparison function to sort Item according to profit/weight ratio
 static bool cmp(struct Item a, struct Item b)
 {
 	double r1 = (double)a.profit / (double)a.weight;
@@ -34,15 +32,13 @@ double fractionalKnapsack(int W, struct Item arr[], int N)
 	// Looping through all items
 	for (int i = 0; i < N; i++) {
 		
-		// If adding Item won't overflow, 
-		// add it completely
+		// If adding Item won't overflow, add it completely
 		if (arr[i].weight <= W) {
 			W -= arr[i].weight;
 			finalvalue += arr[i].profit;
 		}
 
-		// If we can't add current Item, 
-		// add fractional part of it
+		// If we can't add current Item, add fractional part of it
 		else {
 			finalvalue
 				+= arr[i].profit
@@ -55,7 +51,6 @@ double fractionalKnapsack(int W, struct Item arr[], int N)
 	return finalvalue;
 }
 
-// Driver code
 int main()
 {
 	int W = 50;

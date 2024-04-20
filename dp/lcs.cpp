@@ -13,7 +13,6 @@ int lcs(string X, string Y, int m, int n)
 				lcs(X, Y, m - 1, n)); 
 } 
 
-// Driver code 
 int main() 
 { 
 	string S1 = "AGGTAB"; 
@@ -25,5 +24,3 @@ int main()
 
 	return 0; 
 } 
-
-// This code is contributed by rathbhupendra
