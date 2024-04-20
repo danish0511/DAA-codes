@@ -1,0 +1,26 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h2 {
+    margin-left: 20px;
+    text-decoration:underline;
+}
+ul {
+    list-style-type: none;
+}
+li {
+    padding: 1px;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 900;
+    color: red;
+}
+z
+a:after::before {
+    text-decoration: none;
+    font-weight: 900;
+    color: red;
+}
